@@ -15,6 +15,7 @@ Movie movie2 = {"Black Panther", ACTION, 134};
 TimeSlot morning = {movie1, {9, 15}};
 TimeSlot daytime = {movie2, {12, 15}};
 TimeSlot evening = {movie2, {16, 45}}; 
+TimeSlot morning2 = {movie2, {10, 10}};
 
 TEST_CASE("Task A")
 {
@@ -40,4 +41,10 @@ TEST_CASE("Task D")
 {
     CHECK(morning.scheduleAfter(movie2).getTimeSlot() == "Black Panther ACTION (134 min) [starts at 11:11, ends by 13:25]"); 
     CHECK(evening.scheduleAfter(movie1).getTimeSlot() == "Back to the Future COMEDY (116 min) [starts at 18:59, ends by 20:55]");
+}
+
+TEST_CASE("Task E")
+{
+    CHECK(morning.timeOverlap(daytime) == false);
+    CHECK(morning.timeOverlap(morning2) == true);
 }

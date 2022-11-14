@@ -27,6 +27,7 @@ int main()
     TimeSlot morning = {movie1, {9, 15}};
     TimeSlot daytime = {movie2, {12, 15}};
     TimeSlot evening = {movie2, {16, 45}}; 
+    TimeSlot morning2 = {movie2, {10, 10}};
 
     PRINTLN(morning.getTimeSlot());
     PRINTLN(daytime.getTimeSlot());
@@ -34,5 +35,8 @@ int main()
 
     PRINTLN(morning.scheduleAfter(movie2).getTimeSlot());
     PRINTLN(evening.scheduleAfter(movie1).getTimeSlot());
+
+    PRINTLN(morning.timeOverlap(daytime)); // false
+    PRINTLN(morning.timeOverlap(morning2)); // true
     return 0;
 }

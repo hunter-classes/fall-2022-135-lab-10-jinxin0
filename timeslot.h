@@ -17,5 +17,10 @@ public:
     {
         return {nextMovie, addMinutes(startTime, movie.duration)};
     }
+
+    bool timeOverlap(TimeSlot other)
+    {
+        return (minutesUntil(addMinutes(startTime, movie.duration), other.startTime) < 0);
+    }
 };
 
