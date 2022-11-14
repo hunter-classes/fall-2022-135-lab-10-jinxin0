@@ -31,5 +31,8 @@ int main()
     PRINTLN(morning.getTimeSlot());
     PRINTLN(daytime.getTimeSlot());
     PRINTLN(evening.getTimeSlot());
+
+    PRINTLN(morning.scheduleAfter(movie2).getTimeSlot());
+    PRINTLN(evening.scheduleAfter(movie1).getTimeSlot());
     return 0;
 }

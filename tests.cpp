@@ -35,3 +35,9 @@ TEST_CASE("Task C")
     CHECK(daytime.getTimeSlot() == "Black Panther ACTION (134 min) [starts at 12:15, ends by 14:29]");
     CHECK(evening.getTimeSlot() == "Black Panther ACTION (134 min) [starts at 16:45, ends by 18:59]");
 }
+
+TEST_CASE("Task D")
+{
+    CHECK(morning.scheduleAfter(movie2).getTimeSlot() == "Black Panther ACTION (134 min) [starts at 11:11, ends by 13:25]"); 
+    CHECK(evening.scheduleAfter(movie1).getTimeSlot() == "Back to the Future COMEDY (116 min) [starts at 18:59, ends by 20:55]");
+}

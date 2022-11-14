@@ -12,5 +12,10 @@ public:
     {
         return movie.getMovie() + " [starts at " + startTime.toString() + ", ends by " + addMinutes(startTime, movie.duration).toString() + ']';
     }
+
+    TimeSlot scheduleAfter(Movie nextMovie)
+    {
+        return {nextMovie, addMinutes(startTime, movie.duration)};
+    }
 };
 
