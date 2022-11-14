@@ -14,4 +14,4 @@ main.o: main.cpp ${HEADERS}
 tests.o: tests.cpp ${HEADERS}
 
 clean:
-	rm -f *.o
+	rm -f ${OBJS}

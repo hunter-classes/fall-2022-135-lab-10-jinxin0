@@ -1,6 +1,8 @@
 #include <iostream>
+#include "movie.h"
 #include "time.h"
-    
+#include "timeslot.h"
+
 template<typename T>
 void PRINTLN(T x)
 {
@@ -18,5 +20,16 @@ int main()
 
     PRINTLN(addMinutes(t1, 59)); // 12:59
     PRINTLN(addMinutes(t1, 60)); // 13:00
+
+    Movie movie1 = {"Back to the Future", COMEDY, 116};
+    Movie movie2 = {"Black Panther", ACTION, 134};
+
+    TimeSlot morning = {movie1, {9, 15}};
+    TimeSlot daytime = {movie2, {12, 15}};
+    TimeSlot evening = {movie2, {16, 45}}; 
+
+    PRINTLN(morning.getTimeSlot());
+    PRINTLN(daytime.getTimeSlot());
+    PRINTLN(evening.getTimeSlot());
     return 0;
 }

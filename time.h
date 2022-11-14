@@ -2,6 +2,7 @@
 
 #include <iomanip>
 #include <iostream>
+#include <string>
 
 class Time 
 {
@@ -14,9 +15,15 @@ public:
 	return h == other.h && m == other.m;
     }
 
+    std::string toString() const
+    {
+	std::string s;
+        return s + std::to_string(h) + ':' + std::to_string(m); 
+    }
+
     friend std::ostream& operator<<(std::ostream& out, const Time& other)
     {
-	out << std::setfill('0') << std::setw(2) << other.h << ':' << std::setfill('0') << std::setw(2) << other.m;
+	out << other.toString();
 	return out;
     }
 };
@@ -24,3 +31,4 @@ public:
 int minutesSinceMidnight(Time time);
 int minutesUntil(Time earlier, Time later);
 Time addMinutes(Time time0, int min);
+
