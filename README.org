@@ -6,7 +6,7 @@
 
 * GitHub username: jinxin0
 
-* Notes:
+* Notes: I have done task C and after as member functions in the timeslot class because if I define the functions in time.h I will have to include timeslot.h but timeslot.h includes time.h, this creates a circular dependency.
 
 
   
